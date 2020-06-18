@@ -5,14 +5,12 @@ import { Provider } from "react-redux";
 
 import store from "./store";
 
-import TodoList from "./TodoList";
-
-console.tron.log("Testando 123");
+import Routes from "./routes";
 
 function App() {
   return (
     <Provider store={store}>
-      <TodoList></TodoList>
+      <Routes />
     </Provider>
   );
 }
