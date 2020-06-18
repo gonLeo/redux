@@ -11,7 +11,7 @@ export default function favorites(state = INITIAL_STATE, action) {
       return {
         ...state,
         loading: false,
-        data: [...state, action.payload.data],
+        data: [...state.data, action.payload.data],
       };
     default:
       return state;

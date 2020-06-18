@@ -6,7 +6,7 @@ import { bindActionCreators } from "redux";
 import * as FavoriteActions from "../../store/actions/favorites";
 
 class Main extends Component {
-  propTypes = {
+  static propTypes = {
     addFavoriteRequest: propTypes.func.isRequired,
     favorites: propTypes.shape({
       loading: propTypes.bool,
@@ -27,6 +27,8 @@ class Main extends Component {
   handleRepository = (event) => {
     event.preventDefault();
     this.props.addFavoriteRequest(this.state.repositoryInput);
+
+    this.setState({ repositoryInput: "" });
   };
 
   render() {
@@ -40,7 +42,7 @@ class Main extends Component {
           />
           <button type="submit">Adicionar </button>
 
-          {this.props.favorites.loading && <span>Carregando...</span>}
+          {this.props.favorites.loading && <span>Carregando ... </span>}
         </form>
         <ul>
           {this.props.favorites.data.map((favorite) => (
